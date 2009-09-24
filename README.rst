@@ -18,6 +18,7 @@ Tested features
 
 * Extract words from a document for indexing purpose.
 * Get metadata from a document
+* Get metadata from a document via URL (like http://www.foo.com/doc.docx)
 
 Planned features
 ----------------
@@ -98,8 +99,7 @@ problems in a try (...) except (...) block in your application.
 Developing and testing
 ======================
 
-You should grab openxmllib with your subversion client from its `repository at
-Google code <http://code.google.com/p/openxmllib/source/checkout>`_.
+You should grab openxmllib with Git from Hugo's fork at `GitHub <http://github.com/hugobr/openxmllib>`_.
 
 Then::
 
