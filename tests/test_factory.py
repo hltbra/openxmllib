@@ -30,10 +30,10 @@ class FactoryTest(unittest.TestCase):
 
         for test_filename in ALL_IN_FILES:
             test_filepath = os.path.join(TEST_FILES_IN, test_filename)
-            fh = file(test_filepath, 'rb')
-            doc = openxmllib.openXmlDocument(test_filepath)
-            fh.close()
-            self.failUnless(isinstance(doc, openxmllib.document.Document),
+            test_file = file(test_filepath, 'rb')
+            test_document = openxmllib.openXmlDocument(test_file)
+            test_file.close()
+            self.failUnless(isinstance(test_document, openxmllib.document.Document),
                             "%s should be processed" % test_filepath)
         return
 
