@@ -1,6 +1,7 @@
 import BaseHTTPServer
 import mimetypes
-from fixures import HOST_NAME, PORT
+import os
+from fixures import HOST_NAME, PORT, TEST_FILES_IN, ALL_IN_FILES
 
 class SimpleHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -8,7 +9,7 @@ class SimpleHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', mimetypes.guess_type('foo.docx')[0])
             self.end_headers()
-            self.wfile.write(open('/home/hugo/openxmllib/tests/in/wordprocessing1.docx').read())
+            self.wfile.write(open(os.path.join(TEST_FILES_IN, ALL_IN_FILES[0])).read())
         else:
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
